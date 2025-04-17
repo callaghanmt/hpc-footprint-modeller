@@ -129,13 +129,16 @@ total_energy_kwh, total_co2_kg = calculate_carbon_impact(
 st.markdown("#### Job Impact Summary")
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.metric("Avg. Power / Node", f"{power_per_node_w:,.1f} W")
+    st.metric("Avg. Power / Node", 
+        f"{power_per_node_w:,.1f} W")
 with col2:
-    st.metric("Total Energy Consumed", f"{total_energy_kwh:,.1f} kWh",
+    st.metric("Total Energy Consumed", 
+        f"{total_energy_kwh:,.1f} kWh",
               help="Total electricity used by nodes and datacenter overhead (cooling, etc.)")
 with col3:
-    st.metric(f"Carbon Emissions ({selected_location_option})", f"{total_co2_kg:,.2f} kg CO₂e",
-              help=f"Based on {carbon_intensity_gco2e_kwh} gCO₂e/kWh grid intensity.")
+    st.metric(f"Carbon Emissions ({selected_location_option})", 
+        f"{total_co2_kg:,.2f} kg CO₂e",
+                help=f"Based on {carbon_intensity_gco2e_kwh} gCO₂e/kWh grid intensity.")
 
 
 # Display Equivalencies
